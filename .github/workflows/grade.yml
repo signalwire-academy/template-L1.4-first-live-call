@@ -12,29 +12,27 @@ jobs:
       contents: read
       checks: write
       issues: write
-      
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: pip install signalwire-agents
-      
+
       - name: Grade lab
         id: grade
         uses: signalwire-academy/swaig-grader@v1
         with:
           agent-file: solution/agent.py
-          checks: |
-            instantiate
-            swml_valid
-      
+
       - name: Notify progress tracker
         if: always()
+        continue-on-error: true
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PROGRESS_TOKEN }}
