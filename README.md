@@ -71,4 +71,10 @@ See `reference/starter.py` for a boilerplate template.
 
 ---
 
+## Next Assignment
+
+Ready to continue? [**Start Lab 1.7: Build Lookup Function**](https://classroom.github.com/a/sf_Rpj3b)
+
+---
+
 *SignalWire AI Agents Certification*
